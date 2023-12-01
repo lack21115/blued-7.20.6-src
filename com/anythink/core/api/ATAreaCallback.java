@@ -1,0 +1,8 @@
+package com.anythink.core.api;
+
+/* loaded from: source-6737240-dex2jar.jar:com/anythink/core/api/ATAreaCallback.class */
+public interface ATAreaCallback {
+    void onErrorCallback(String str);
+
+    void onResultCallback(String str);
+}

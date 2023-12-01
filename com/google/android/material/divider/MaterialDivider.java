@@ -1,0 +1,141 @@
+package com.google.android.material.divider;
+
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.util.AttributeSet;
+import android.view.View;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+import com.google.android.material.R;
+import com.google.android.material.internal.ThemeEnforcement;
+import com.google.android.material.resources.MaterialResources;
+import com.google.android.material.shape.MaterialShapeDrawable;
+import com.google.android.material.theme.overlay.MaterialThemeOverlay;
+
+/* loaded from: source-8110460-dex2jar.jar:com/google/android/material/divider/MaterialDivider.class */
+public class MaterialDivider extends View {
+    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_MaterialDivider;
+    private int color;
+    private final MaterialShapeDrawable dividerDrawable;
+    private int insetEnd;
+    private int insetStart;
+    private int thickness;
+
+    public MaterialDivider(Context context) {
+        this(context, null);
+    }
+
+    public MaterialDivider(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, R.attr.materialDividerStyle);
+    }
+
+    public MaterialDivider(Context context, AttributeSet attributeSet, int i) {
+        super(MaterialThemeOverlay.wrap(context, attributeSet, i, DEF_STYLE_RES), attributeSet, i);
+        Context context2 = getContext();
+        this.dividerDrawable = new MaterialShapeDrawable();
+        TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialDivider, i, DEF_STYLE_RES, new int[0]);
+        this.thickness = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialDivider_dividerThickness, getResources().getDimensionPixelSize(R.dimen.material_divider_thickness));
+        this.insetStart = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.MaterialDivider_dividerInsetStart, 0);
+        this.insetEnd = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.MaterialDivider_dividerInsetEnd, 0);
+        setDividerColor(MaterialResources.getColorStateList(context2, obtainStyledAttributes, R.styleable.MaterialDivider_dividerColor).getDefaultColor());
+        obtainStyledAttributes.recycle();
+    }
+
+    public int getDividerColor() {
+        return this.color;
+    }
+
+    public int getDividerInsetEnd() {
+        return this.insetEnd;
+    }
+
+    public int getDividerInsetStart() {
+        return this.insetStart;
+    }
+
+    public int getDividerThickness() {
+        return this.thickness;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        int width;
+        int i;
+        super.onDraw(canvas);
+        boolean z = true;
+        if (ViewCompat.getLayoutDirection(this) != 1) {
+            z = false;
+        }
+        int i2 = z ? this.insetEnd : this.insetStart;
+        if (z) {
+            width = getWidth();
+            i = this.insetStart;
+        } else {
+            width = getWidth();
+            i = this.insetEnd;
+        }
+        this.dividerDrawable.setBounds(i2, 0, width - i, getBottom() - getTop());
+        this.dividerDrawable.draw(canvas);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.view.View
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int mode = View.MeasureSpec.getMode(i2);
+        int measuredHeight = getMeasuredHeight();
+        if (mode == Integer.MIN_VALUE || mode == 0) {
+            int i3 = this.thickness;
+            int i4 = measuredHeight;
+            if (i3 > 0) {
+                i4 = measuredHeight;
+                if (measuredHeight != i3) {
+                    i4 = i3;
+                }
+            }
+            setMeasuredDimension(getMeasuredWidth(), i4);
+        }
+    }
+
+    public void setDividerColor(int i) {
+        if (this.color != i) {
+            this.color = i;
+            this.dividerDrawable.setFillColor(ColorStateList.valueOf(i));
+            invalidate();
+        }
+    }
+
+    public void setDividerColorResource(int i) {
+        setDividerColor(ContextCompat.getColor(getContext(), i));
+    }
+
+    public void setDividerInsetEnd(int i) {
+        this.insetEnd = i;
+    }
+
+    public void setDividerInsetEndResource(int i) {
+        setDividerInsetEnd(getContext().getResources().getDimensionPixelOffset(i));
+    }
+
+    public void setDividerInsetStart(int i) {
+        this.insetStart = i;
+    }
+
+    public void setDividerInsetStartResource(int i) {
+        setDividerInsetStart(getContext().getResources().getDimensionPixelOffset(i));
+    }
+
+    public void setDividerThickness(int i) {
+        if (this.thickness != i) {
+            this.thickness = i;
+            requestLayout();
+        }
+    }
+
+    public void setDividerThicknessResource(int i) {
+        setDividerThickness(getContext().getResources().getDimensionPixelSize(i));
+    }
+}

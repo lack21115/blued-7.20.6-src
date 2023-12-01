@@ -1,0 +1,71 @@
+package com.amap.api.services.busline;
+
+import android.content.Context;
+import com.amap.api.col.p0003sl.gr;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.interfaces.IBusLineSearch;
+
+/* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/busline/BusLineSearch.class */
+public class BusLineSearch {
+    public static final String EXTENSIONS_ALL = "all";
+    public static final String EXTENSIONS_BASE = "base";
+
+    /* renamed from: a  reason: collision with root package name */
+    private IBusLineSearch f5587a;
+
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/busline/BusLineSearch$OnBusLineSearchListener.class */
+    public interface OnBusLineSearchListener {
+        void onBusLineSearched(BusLineResult busLineResult, int i);
+    }
+
+    public BusLineSearch(Context context, BusLineQuery busLineQuery) throws AMapException {
+        this.f5587a = null;
+        if (0 == 0) {
+            try {
+                this.f5587a = new gr(context, busLineQuery);
+            } catch (Exception e) {
+                e.printStackTrace();
+                if (e instanceof AMapException) {
+                    throw ((AMapException) e);
+                }
+            }
+        }
+    }
+
+    public BusLineQuery getQuery() {
+        IBusLineSearch iBusLineSearch = this.f5587a;
+        if (iBusLineSearch != null) {
+            return iBusLineSearch.getQuery();
+        }
+        return null;
+    }
+
+    public BusLineResult searchBusLine() throws AMapException {
+        IBusLineSearch iBusLineSearch = this.f5587a;
+        if (iBusLineSearch != null) {
+            return iBusLineSearch.searchBusLine();
+        }
+        return null;
+    }
+
+    public void searchBusLineAsyn() {
+        IBusLineSearch iBusLineSearch = this.f5587a;
+        if (iBusLineSearch != null) {
+            iBusLineSearch.searchBusLineAsyn();
+        }
+    }
+
+    public void setOnBusLineSearchListener(OnBusLineSearchListener onBusLineSearchListener) {
+        IBusLineSearch iBusLineSearch = this.f5587a;
+        if (iBusLineSearch != null) {
+            iBusLineSearch.setOnBusLineSearchListener(onBusLineSearchListener);
+        }
+    }
+
+    public void setQuery(BusLineQuery busLineQuery) {
+        IBusLineSearch iBusLineSearch = this.f5587a;
+        if (iBusLineSearch != null) {
+            iBusLineSearch.setQuery(busLineQuery);
+        }
+    }
+}

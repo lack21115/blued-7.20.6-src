@@ -1,0 +1,15 @@
+package com.huawei.hms.ads;
+
+/* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/AppDownloadStatus.class */
+public enum AppDownloadStatus {
+    DOWNLOAD,
+    WAITING,
+    DOWNLOADING,
+    PAUSE,
+    RESUME,
+    DOWNLOADED,
+    DOWNLOADFAILED,
+    INSTALLING,
+    INSTALL,
+    INSTALLED
+}

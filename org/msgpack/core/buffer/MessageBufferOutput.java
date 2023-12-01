@@ -1,0 +1,16 @@
+package org.msgpack.core.buffer;
+
+import java.io.Closeable;
+import java.io.Flushable;
+import java.io.IOException;
+
+/* loaded from: source-3503164-dex2jar.jar:org/msgpack/core/buffer/MessageBufferOutput.class */
+public interface MessageBufferOutput extends Closeable, Flushable {
+    void add(byte[] bArr, int i, int i2) throws IOException;
+
+    MessageBuffer next(int i) throws IOException;
+
+    void write(byte[] bArr, int i, int i2) throws IOException;
+
+    void writeBuffer(int i) throws IOException;
+}

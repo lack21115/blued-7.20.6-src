@@ -1,0 +1,18 @@
+package com.qq.e.ads.banner2;
+
+import com.qq.e.comm.util.AdError;
+
+/* loaded from: source-8303388-dex2jar.jar:com/qq/e/ads/banner2/UnifiedBannerADListener.class */
+public interface UnifiedBannerADListener {
+    void onADClicked();
+
+    void onADClosed();
+
+    void onADExposure();
+
+    void onADLeftApplication();
+
+    void onADReceive();
+
+    void onNoAD(AdError adError);
+}

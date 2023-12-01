@@ -1,0 +1,19 @@
+package java.lang;
+
+import java.io.InputStream;
+import java.io.OutputStream;
+
+/* loaded from: source-2895416-dex2jar.jar:java/lang/Process.class */
+public abstract class Process {
+    public abstract void destroy();
+
+    public abstract int exitValue();
+
+    public abstract InputStream getErrorStream();
+
+    public abstract InputStream getInputStream();
+
+    public abstract OutputStream getOutputStream();
+
+    public abstract int waitFor() throws InterruptedException;
+}

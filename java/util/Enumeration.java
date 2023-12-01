@@ -1,0 +1,8 @@
+package java.util;
+
+/* loaded from: source-2895416-dex2jar.jar:java/util/Enumeration.class */
+public interface Enumeration<E> {
+    boolean hasMoreElements();
+
+    E nextElement();
+}

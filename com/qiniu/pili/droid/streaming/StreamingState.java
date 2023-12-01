@@ -1,0 +1,28 @@
+package com.qiniu.pili.droid.streaming;
+
+/* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/streaming/StreamingState.class */
+public enum StreamingState {
+    UNKNOWN,
+    PREPARING,
+    READY,
+    CONNECTING,
+    STREAMING,
+    SHUTDOWN,
+    IOERROR,
+    CAMERA_SWITCHED,
+    TORCH_INFO,
+    SENDING_BUFFER_EMPTY,
+    SENDING_BUFFER_FULL,
+    SENDING_BUFFER_HAS_FEW_ITEMS,
+    SENDING_BUFFER_HAS_MANY_ITEMS,
+    DISCONNECTED,
+    NO_SUPPORTED_PREVIEW_SIZE,
+    AUDIO_RECORDING_FAIL,
+    OPEN_CAMERA_FAIL,
+    NO_NV21_PREVIEW_FORMAT,
+    INVALID_STREAMING_URL,
+    CONNECTED,
+    UNAUTHORIZED_STREAMING_URL,
+    REQUEST_SCREEN_CAPTURING_FAIL,
+    UNAUTHORIZED_PACKAGE
+}

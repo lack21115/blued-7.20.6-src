@@ -1,0 +1,32 @@
+package com.meizu.cloud.pushsdk.b.b;
+
+import com.meizu.cloud.pushinternal.DebugLogger;
+import java.lang.reflect.Constructor;
+
+/* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/b/b/b.class */
+public class b {
+
+    /* renamed from: a  reason: collision with root package name */
+    private final a f23970a;
+    private final Class<?>[] b;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public b(a aVar, Class<?>... clsArr) {
+        this.f23970a = aVar;
+        this.b = clsArr;
+    }
+
+    public <T> d<T> a(Object... objArr) {
+        d<T> dVar = new d<>();
+        try {
+            Constructor<?> declaredConstructor = this.f23970a.a().getDeclaredConstructor(this.b);
+            declaredConstructor.setAccessible(true);
+            dVar.b = (T) declaredConstructor.newInstance(objArr);
+            dVar.f23973a = true;
+            return dVar;
+        } catch (Exception e) {
+            DebugLogger.e("ReflectConstructor", "newInstance", e);
+            return dVar;
+        }
+    }
+}

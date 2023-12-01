@@ -1,0 +1,15 @@
+package com.huawei.secure.android.common.xml;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+/* loaded from: source-7994992-dex2jar.jar:com/huawei/secure/android/common/xml/DocumentBuilderFactorySecurity.class */
+public class DocumentBuilderFactorySecurity {
+    public static DocumentBuilderFactory getInstance() throws ParserConfigurationException, NullPointerException {
+        DocumentBuilderFactory newInstance = DocumentBuilderFactory.newInstance();
+        newInstance.setFeature("http://xml.org/sax/features/namespaces", true);
+        newInstance.setFeature("http://xml.org/sax/features/validation", false);
+        newInstance.setExpandEntityReferences(false);
+        return newInstance;
+    }
+}

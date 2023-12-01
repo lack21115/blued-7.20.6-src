@@ -1,0 +1,57 @@
+package com.sobot.chat.api.apiUtils;
+
+/* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/api/apiUtils/ZhiChiUrlApi.class */
+public interface ZhiChiUrlApi {
+    public static final String LANGUAGE_VERSION = "3_1_3";
+    public static final String SOBOT_FROM = "2";
+    public static final String VERSION = "3.1.3";
+    public static final String ack = "msg/ack.action";
+    public static final String api_chat_comment = "comment.action";
+    public static final String api_chat_config = "chatconfig.action";
+    public static final String api_collect = "collect.action";
+    public static final String api_delete_history_msg = "deleteHistoryRecords.action";
+    public static final String api_fileUploadForPostMsg = "fileUploadForPostMsgBySdk.action";
+    public static final String api_get_leavemsg_config = "getLeaveMsg.action";
+    public static final String api_group_list = "getGroupList.action";
+    public static final String api_input = "input.action";
+    public static final String api_is_work = "isWork.action";
+    public static final String api_login_out = "out.action";
+    public static final String api_post_msg = "postMsg.action";
+    public static final String api_queryUserCids = "queryUserCids.action";
+    public static final String api_rbAnswerComment = "rbAnswerComment.action";
+    public static final String api_robot_chat_historyMessage_cid = "getChatDetailByCid.action";
+    public static final String api_robot_chat_init = "appInit.action";
+    public static final String api_robot_chat_sendMessage = "chat/v2.action";
+    public static final String api_robot_guide = "robotGuide.action";
+    public static final String api_satisfactionMessage = "satisfactionMessage.action";
+    public static final String api_sendFile_to_customeService = "sendFile.action";
+    public static final String api_sendVoiceToRobot = "sendVoiceToRobot.action";
+    public static final String api_sendmessage_to_customService = "send.action";
+    public static final String api_transfer_people = "chatconnect.action";
+    public static final String authSensitive = "authSensitive.action";
+    public static final String getCategoryList = "getCategoryList.action";
+    public static final String getHelpDocByCategoryId = "getHelpDocByCategoryId.action";
+    public static final String getHelpDocByDocId = "getHelpDocByDocId.action";
+    public static final String getLableInfoList = "getLableInfoList.action";
+    public static final String getPlatformList = "getPlatformList.action";
+    public static final String getRobotSwitchList = "getRobotSwitchList.action";
+    public static final String getUserTicketReplyInfo = "getUserTicketReplyInfo.action";
+    public static final String getWsTemplate = "getWsTemplate.action";
+    public static final String insertSysMsg = "insertSysMsg";
+    public static final String invokeOtherByUser = "invokeOtherByUser.action";
+    public static final String leaveMsg = "allotLeaveMsg.action";
+    public static final String newSubmitForm = "submitForm/v2.action";
+    public static final String pollingMsg = "msg/v2.action";
+    public static final String pollingPlatformVerMsg = "msgPlatform/v2.action";
+    public static final String queryCity = "queryCity.action";
+    public static final String queryFormConfig = "queryFormConfig.action";
+    public static final String questionRecommend = "questionRecommend.action";
+    public static final String removeMerchant = "removeMerchant.action";
+    public static final String robotGuess = "robotGuess.action";
+    public static final String sendLocation = "sendLocation.action";
+    public static final String sendVideo = "sendVideo.action";
+    public static final String sobotConfig = "config.action";
+    public static final String submitForm = "submitForm.action";
+    public static final String updateUserTicketReplyInfo = "updateUserTicketReplyInfo.action";
+    public static final String uploadFile = "uploadFileAndroid.action";
+}

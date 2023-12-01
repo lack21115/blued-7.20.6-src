@@ -1,0 +1,7 @@
+package com.blued.android.framework.mvp;
+
+import androidx.lifecycle.LifecycleOwner;
+
+/* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/mvp/BaseView.class */
+public interface BaseView extends LifecycleOwner {
+}

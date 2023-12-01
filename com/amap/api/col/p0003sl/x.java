@@ -1,0 +1,1178 @@
+package com.amap.api.col.p0003sl;
+
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import android.opengl.GLDebugHelper;
+import android.opengl.GLSurfaceView;
+import android.os.Build;
+import android.util.Log;
+import android.view.TextureView;
+import com.amap.api.maps.MapsInitializer;
+import java.io.Writer;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import javax.microedition.khronos.opengles.GL;
+import javax.microedition.khronos.opengles.GL10;
+
+/* renamed from: com.amap.api.col.3sl.x  reason: invalid package */
+/* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x.class */
+public class x extends TextureView implements TextureView.SurfaceTextureListener {
+
+    /* renamed from: a  reason: collision with root package name */
+    private static final j f5441a = new j((byte) 0);
+    private final WeakReference<x> b;
+
+    /* renamed from: c  reason: collision with root package name */
+    private i f5442c;
+    private GLSurfaceView.Renderer d;
+    private boolean e;
+    private e f;
+    private f g;
+    private g h;
+    private k i;
+    private int j;
+    private int k;
+    private boolean l;
+
+    /* renamed from: com.amap.api.col.3sl.x$a */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$a.class */
+    abstract class a implements e {
+
+        /* renamed from: a  reason: collision with root package name */
+        protected int[] f5443a;
+
+        public a(int[] iArr) {
+            this.f5443a = a(iArr);
+        }
+
+        private int[] a(int[] iArr) {
+            if (x.this.k == 2 || x.this.k == 3) {
+                int length = iArr.length;
+                int[] iArr2 = new int[length + 2];
+                int i = length - 1;
+                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
+                iArr2[i] = 12352;
+                if (x.this.k == 2) {
+                    iArr2[length] = 4;
+                } else {
+                    iArr2[length] = 64;
+                }
+                iArr2[length + 1] = 12344;
+                return iArr2;
+            }
+            return iArr;
+        }
+
+        abstract EGLConfig a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig[] eGLConfigArr);
+
+        @Override // com.amap.api.col.p0003sl.x.e
+        public EGLConfig chooseConfig(EGL10 egl10, EGLDisplay eGLDisplay) {
+            int[] iArr = new int[1];
+            if (egl10.eglChooseConfig(eGLDisplay, this.f5443a, null, 0, iArr)) {
+                int i = iArr[0];
+                if (i > 0) {
+                    EGLConfig[] eGLConfigArr = new EGLConfig[i];
+                    if (egl10.eglChooseConfig(eGLDisplay, this.f5443a, eGLConfigArr, i, iArr)) {
+                        EGLConfig a2 = a(egl10, eGLDisplay, eGLConfigArr);
+                        if (a2 != null) {
+                            return a2;
+                        }
+                        throw new IllegalArgumentException("No config chosen");
+                    }
+                    throw new IllegalArgumentException("eglChooseConfig#2 failed");
+                }
+                throw new IllegalArgumentException("No configs match configSpec");
+            }
+            throw new IllegalArgumentException("eglChooseConfig failed");
+        }
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$b */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$b.class */
+    class b extends a {
+
+        /* renamed from: c  reason: collision with root package name */
+        protected int f5444c;
+        protected int d;
+        protected int e;
+        protected int f;
+        protected int g;
+        protected int h;
+        private int[] j;
+
+        public b() {
+            super(new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 0, 12325, 16, 12326, 0, 12344});
+            this.j = new int[1];
+            this.f5444c = 8;
+            this.d = 8;
+            this.e = 8;
+            this.f = 0;
+            this.g = 16;
+            this.h = 0;
+        }
+
+        private int a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i) {
+            if (egl10.eglGetConfigAttrib(eGLDisplay, eGLConfig, i, this.j)) {
+                return this.j[0];
+            }
+            return 0;
+        }
+
+        @Override // com.amap.api.col.p0003sl.x.a
+        public final EGLConfig a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig[] eGLConfigArr) {
+            int length = eGLConfigArr.length;
+            int i = 0;
+            while (true) {
+                int i2 = i;
+                if (i2 >= length) {
+                    return null;
+                }
+                EGLConfig eGLConfig = eGLConfigArr[i2];
+                int a2 = a(egl10, eGLDisplay, eGLConfig, 12325);
+                int a3 = a(egl10, eGLDisplay, eGLConfig, 12326);
+                if (a2 >= this.g && a3 >= this.h) {
+                    int a4 = a(egl10, eGLDisplay, eGLConfig, 12324);
+                    int a5 = a(egl10, eGLDisplay, eGLConfig, 12323);
+                    int a6 = a(egl10, eGLDisplay, eGLConfig, 12322);
+                    int a7 = a(egl10, eGLDisplay, eGLConfig, 12321);
+                    if (a4 == this.f5444c && a5 == this.d && a6 == this.e && a7 == this.f) {
+                        return eGLConfig;
+                    }
+                }
+                i = i2 + 1;
+            }
+        }
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$c */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$c.class */
+    final class c implements f {
+        private c() {
+        }
+
+        /* synthetic */ c(x xVar, byte b) {
+            this();
+        }
+
+        @Override // com.amap.api.col.p0003sl.x.f
+        public final EGLContext createContext(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
+            int[] iArr = {12440, x.this.k, 12344};
+            EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
+            if (x.this.k == 0) {
+                iArr = null;
+            }
+            return egl10.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, iArr);
+        }
+
+        @Override // com.amap.api.col.p0003sl.x.f
+        public final void destroyContext(EGL10 egl10, EGLDisplay eGLDisplay, EGLContext eGLContext) {
+            if (egl10.eglDestroyContext(eGLDisplay, eGLContext)) {
+                return;
+            }
+            Log.e("DefaultContextFactory", "display:" + eGLDisplay + " context: " + eGLContext);
+            h.a("eglDestroyContex", egl10.eglGetError());
+        }
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$d */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$d.class */
+    static final class d implements g {
+        private d() {
+        }
+
+        /* synthetic */ d(byte b) {
+            this();
+        }
+
+        @Override // com.amap.api.col.p0003sl.x.g
+        public final EGLSurface a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig, Object obj) {
+            try {
+                return egl10.eglCreateWindowSurface(eGLDisplay, eGLConfig, obj, null);
+            } catch (IllegalArgumentException e) {
+                Log.e("GLSurfaceView", "eglCreateWindowSurface", e);
+                return null;
+            }
+        }
+
+        @Override // com.amap.api.col.p0003sl.x.g
+        public final void a(EGL10 egl10, EGLDisplay eGLDisplay, EGLSurface eGLSurface) {
+            egl10.eglDestroySurface(eGLDisplay, eGLSurface);
+        }
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$e */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$e.class */
+    public interface e {
+        EGLConfig chooseConfig(EGL10 egl10, EGLDisplay eGLDisplay);
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$f */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$f.class */
+    public interface f {
+        EGLContext createContext(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig);
+
+        void destroyContext(EGL10 egl10, EGLDisplay eGLDisplay, EGLContext eGLContext);
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$g */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$g.class */
+    public interface g {
+        EGLSurface a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig, Object obj);
+
+        void a(EGL10 egl10, EGLDisplay eGLDisplay, EGLSurface eGLSurface);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: com.amap.api.col.3sl.x$h */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$h.class */
+    public static final class h {
+
+        /* renamed from: a  reason: collision with root package name */
+        EGL10 f5446a;
+        EGLDisplay b;
+
+        /* renamed from: c  reason: collision with root package name */
+        EGLSurface f5447c;
+        EGLConfig d;
+        EGLContext e;
+        private WeakReference<x> f;
+
+        public h(WeakReference<x> weakReference) {
+            this.f = weakReference;
+        }
+
+        private void a(String str) {
+            a(str, this.f5446a.eglGetError());
+        }
+
+        public static void a(String str, int i) {
+            throw new RuntimeException(b(str, i));
+        }
+
+        public static void a(String str, String str2, int i) {
+            Log.w(str, b(str2, i));
+        }
+
+        private static String b(String str, int i) {
+            return str + " failed: " + i;
+        }
+
+        private void g() {
+            EGLSurface eGLSurface = this.f5447c;
+            if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
+                return;
+            }
+            EGL10 egl10 = this.f5446a;
+            EGLDisplay eGLDisplay = this.b;
+            EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
+            egl10.eglMakeCurrent(eGLDisplay, eGLSurface2, eGLSurface2, EGL10.EGL_NO_CONTEXT);
+            x xVar = this.f.get();
+            if (xVar != null) {
+                xVar.h.a(this.f5446a, this.b, this.f5447c);
+            }
+            this.f5447c = null;
+        }
+
+        public final void a() {
+            EGL10 egl10 = (EGL10) EGLContext.getEGL();
+            this.f5446a = egl10;
+            EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+            this.b = eglGetDisplay;
+            if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+                throw new RuntimeException("eglGetDisplay failed");
+            }
+            if (!this.f5446a.eglInitialize(this.b, new int[2])) {
+                throw new RuntimeException("eglInitialize failed");
+            }
+            x xVar = this.f.get();
+            if (xVar == null) {
+                this.d = null;
+                this.e = null;
+            } else {
+                this.d = xVar.f.chooseConfig(this.f5446a, this.b);
+                this.e = xVar.g.createContext(this.f5446a, this.b, this.d);
+            }
+            EGLContext eGLContext = this.e;
+            if (eGLContext == null || eGLContext == EGL10.EGL_NO_CONTEXT) {
+                this.e = null;
+                a("createContext");
+            }
+            this.f5447c = null;
+        }
+
+        public final boolean b() {
+            if (this.f5446a != null) {
+                if (this.b != null) {
+                    if (this.d != null) {
+                        g();
+                        x xVar = this.f.get();
+                        if (xVar != null) {
+                            this.f5447c = xVar.h.a(this.f5446a, this.b, this.d, xVar.getSurfaceTexture());
+                        } else {
+                            this.f5447c = null;
+                        }
+                        EGLSurface eGLSurface = this.f5447c;
+                        if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
+                            if (this.f5446a.eglGetError() == 12299) {
+                                Log.e("EglHelper", "createWindowSurface returned EGL_BAD_NATIVE_WINDOW.");
+                                return false;
+                            }
+                            return false;
+                        }
+                        EGL10 egl10 = this.f5446a;
+                        EGLDisplay eGLDisplay = this.b;
+                        EGLSurface eGLSurface2 = this.f5447c;
+                        if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface2, eGLSurface2, this.e)) {
+                            return true;
+                        }
+                        a("EGLHelper", "eglMakeCurrent", this.f5446a.eglGetError());
+                        return false;
+                    }
+                    throw new RuntimeException("mEglConfig not initialized");
+                }
+                throw new RuntimeException("eglDisplay not initialized");
+            }
+            throw new RuntimeException("egl not initialized");
+        }
+
+        final GL c() {
+            GL gl = this.e.getGL();
+            x xVar = this.f.get();
+            GL gl2 = gl;
+            if (xVar != null) {
+                if (xVar.i != null) {
+                    gl = xVar.i.a();
+                }
+                gl2 = gl;
+                if ((xVar.j & 3) != 0) {
+                    int i = 0;
+                    l lVar = null;
+                    if ((xVar.j & 1) != 0) {
+                        i = 1;
+                    }
+                    if ((xVar.j & 2) != 0) {
+                        lVar = new l();
+                    }
+                    gl2 = GLDebugHelper.wrap(gl, i, lVar);
+                }
+            }
+            return gl2;
+        }
+
+        public final int d() {
+            if (this.f5446a.eglSwapBuffers(this.b, this.f5447c)) {
+                return 12288;
+            }
+            return this.f5446a.eglGetError();
+        }
+
+        public final void e() {
+            g();
+        }
+
+        public final void f() {
+            if (this.e != null) {
+                x xVar = this.f.get();
+                if (xVar != null) {
+                    xVar.g.destroyContext(this.f5446a, this.b, this.e);
+                }
+                this.e = null;
+            }
+            EGLDisplay eGLDisplay = this.b;
+            if (eGLDisplay != null) {
+                this.f5446a.eglTerminate(eGLDisplay);
+                this.b = null;
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: com.amap.api.col.3sl.x$i */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$i.class */
+    public static final class i extends Thread {
+
+        /* renamed from: a  reason: collision with root package name */
+        private boolean f5448a;
+        private boolean b;
+
+        /* renamed from: c  reason: collision with root package name */
+        private boolean f5449c;
+        private boolean d;
+        private boolean e;
+        private boolean f;
+        private boolean g;
+        private boolean h;
+        private boolean i;
+        private boolean j;
+        private boolean k;
+        private boolean p;
+        private h s;
+        private WeakReference<x> t;
+        private ArrayList<Runnable> q = new ArrayList<>();
+        private boolean r = true;
+        private int l = 0;
+        private int m = 0;
+        private boolean o = true;
+        private int n = 1;
+
+        i(WeakReference<x> weakReference) {
+            this.t = weakReference;
+        }
+
+        static /* synthetic */ boolean a(i iVar) {
+            iVar.b = true;
+            return true;
+        }
+
+        private void k() {
+            if (this.i) {
+                this.i = false;
+                this.s.e();
+            }
+        }
+
+        private void l() {
+            if (this.h) {
+                this.s.f();
+                this.h = false;
+                x.f5441a.c(this);
+            }
+        }
+
+        private void m() throws InterruptedException {
+            boolean z;
+            this.s = new h(this.t);
+            this.h = false;
+            this.i = false;
+            boolean z2 = false;
+            boolean z3 = false;
+            boolean z4 = false;
+            GL10 gl10 = null;
+            boolean z5 = false;
+            boolean z6 = false;
+            boolean z7 = false;
+            boolean z8 = false;
+            int i = 0;
+            int i2 = 0;
+            boolean z9 = false;
+            while (true) {
+                Runnable runnable = null;
+                while (true) {
+                    try {
+                        synchronized (x.f5441a) {
+                            boolean z10 = z9;
+                            boolean z11 = z5;
+                            boolean z12 = z2;
+                            while (!this.f5448a) {
+                                if (this.q.isEmpty()) {
+                                    if (this.d != this.f5449c) {
+                                        z = this.f5449c;
+                                        this.d = this.f5449c;
+                                        x.f5441a.notifyAll();
+                                    } else {
+                                        z = false;
+                                    }
+                                    boolean z13 = z4;
+                                    if (this.k) {
+                                        k();
+                                        l();
+                                        this.k = false;
+                                        z13 = true;
+                                    }
+                                    boolean z14 = z12;
+                                    if (z12) {
+                                        k();
+                                        l();
+                                        z14 = false;
+                                    }
+                                    if (z && this.i) {
+                                        k();
+                                    }
+                                    if (z && this.h) {
+                                        x xVar = this.t.get();
+                                        if (!(xVar == null ? false : xVar.l) || x.f5441a.a()) {
+                                            l();
+                                        }
+                                    }
+                                    if (z && x.f5441a.b()) {
+                                        this.s.f();
+                                    }
+                                    if (!this.e && !this.g) {
+                                        if (this.i) {
+                                            k();
+                                        }
+                                        this.g = true;
+                                        this.f = false;
+                                        x.f5441a.notifyAll();
+                                    }
+                                    if (this.e && this.g) {
+                                        this.g = false;
+                                        x.f5441a.notifyAll();
+                                    }
+                                    boolean z15 = z3;
+                                    if (z3) {
+                                        this.p = true;
+                                        x.f5441a.notifyAll();
+                                        z15 = false;
+                                        z10 = false;
+                                    }
+                                    boolean z16 = z13;
+                                    boolean z17 = z11;
+                                    boolean z18 = z6;
+                                    boolean z19 = z7;
+                                    boolean z20 = z8;
+                                    if (o()) {
+                                        boolean z21 = z13;
+                                        z5 = z11;
+                                        if (!this.h) {
+                                            if (z13) {
+                                                z21 = false;
+                                                z5 = z11;
+                                            } else {
+                                                z21 = z13;
+                                                z5 = z11;
+                                                if (x.f5441a.b(this)) {
+                                                    try {
+                                                        this.s.a();
+                                                        this.h = true;
+                                                        x.f5441a.notifyAll();
+                                                        z5 = true;
+                                                        z21 = z13;
+                                                    } catch (RuntimeException e) {
+                                                        x.f5441a.c(this);
+                                                        throw e;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        boolean z22 = z6;
+                                        boolean z23 = z7;
+                                        boolean z24 = z8;
+                                        if (this.h) {
+                                            z22 = z6;
+                                            z23 = z7;
+                                            z24 = z8;
+                                            if (!this.i) {
+                                                this.i = true;
+                                                z22 = true;
+                                                z23 = true;
+                                                z24 = true;
+                                            }
+                                        }
+                                        z16 = z21;
+                                        z17 = z5;
+                                        z18 = z22;
+                                        z19 = z23;
+                                        z20 = z24;
+                                        if (this.i) {
+                                            if (this.r) {
+                                                i = this.l;
+                                                i2 = this.m;
+                                                this.r = false;
+                                                z6 = true;
+                                                z8 = true;
+                                                z9 = true;
+                                            } else {
+                                                z6 = z22;
+                                                z8 = z24;
+                                                z9 = z10;
+                                            }
+                                            this.o = false;
+                                            x.f5441a.notifyAll();
+                                            z7 = z23;
+                                            z4 = z21;
+                                            z3 = z15;
+                                            z2 = z14;
+                                        }
+                                    }
+                                    x.f5441a.wait();
+                                    z12 = z14;
+                                    z3 = z15;
+                                    z4 = z16;
+                                    z11 = z17;
+                                    z6 = z18;
+                                    z7 = z19;
+                                    z8 = z20;
+                                } else {
+                                    runnable = this.q.remove(0);
+                                    z2 = z12;
+                                    z5 = z11;
+                                    z9 = z10;
+                                }
+                            }
+                            synchronized (x.f5441a) {
+                                k();
+                                l();
+                            }
+                            return;
+                        }
+                        if (runnable != null) {
+                            break;
+                        }
+                        boolean z25 = z6;
+                        if (z6) {
+                            if (this.s.b()) {
+                                synchronized (x.f5441a) {
+                                    this.j = true;
+                                    x.f5441a.notifyAll();
+                                }
+                                z25 = false;
+                            } else {
+                                synchronized (x.f5441a) {
+                                    this.j = true;
+                                    this.f = true;
+                                    x.f5441a.notifyAll();
+                                }
+                            }
+                        }
+                        boolean z26 = z7;
+                        if (z7) {
+                            gl10 = (GL10) this.s.c();
+                            x.f5441a.a(gl10);
+                            z26 = false;
+                        }
+                        boolean z27 = z5;
+                        if (z5) {
+                            x xVar2 = this.t.get();
+                            if (xVar2 != null) {
+                                xVar2.d.onSurfaceCreated(gl10, this.s.d);
+                            }
+                            z27 = false;
+                        }
+                        boolean z28 = z8;
+                        if (z8) {
+                            x xVar3 = this.t.get();
+                            if (xVar3 != null) {
+                                xVar3.d.onSurfaceChanged(gl10, i, i2);
+                            }
+                            z28 = false;
+                        }
+                        x xVar4 = this.t.get();
+                        if (xVar4 != null) {
+                            xVar4.d.onDrawFrame(gl10);
+                        }
+                        int d = this.s.d();
+                        if (d != 12288) {
+                            if (d != 12302) {
+                                h.a("GLThread", "eglSwapBuffers", d);
+                                synchronized (x.f5441a) {
+                                    this.f = true;
+                                    x.f5441a.notifyAll();
+                                }
+                            } else {
+                                z2 = true;
+                            }
+                        }
+                        if (z9) {
+                            z3 = true;
+                        }
+                        z5 = z27;
+                        z6 = z25;
+                        z7 = z26;
+                        z8 = z28;
+                    } catch (Throwable th) {
+                        synchronized (x.f5441a) {
+                            k();
+                            l();
+                            throw th;
+                        }
+                    }
+                }
+                runnable.run();
+            }
+        }
+
+        private boolean n() {
+            return this.h && this.i && o();
+        }
+
+        private boolean o() {
+            if (this.d || !this.e || this.f || this.l <= 0 || this.m <= 0) {
+                return false;
+            }
+            return this.o || this.n == 1;
+        }
+
+        public final int a() {
+            int i;
+            synchronized (x.f5441a) {
+                i = this.n;
+            }
+            return i;
+        }
+
+        public final void a(int i) {
+            if (i < 0 || i > 1) {
+                throw new IllegalArgumentException("renderMode");
+            }
+            synchronized (x.f5441a) {
+                this.n = i;
+                x.f5441a.notifyAll();
+            }
+        }
+
+        public final void a(int i, int i2) {
+            synchronized (x.f5441a) {
+                this.l = i;
+                this.m = i2;
+                this.r = true;
+                this.o = true;
+                this.p = false;
+                x.f5441a.notifyAll();
+                while (!this.b && !this.d && !this.p && n()) {
+                    try {
+                        x.f5441a.wait();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+        }
+
+        public final void a(Runnable runnable) {
+            if (runnable == null) {
+                throw new IllegalArgumentException("r must not be null");
+            }
+            synchronized (x.f5441a) {
+                this.q.add(runnable);
+                x.f5441a.notifyAll();
+            }
+        }
+
+        public final void b() {
+            synchronized (x.f5441a) {
+                this.o = true;
+                x.f5441a.notifyAll();
+            }
+        }
+
+        public final void c() {
+            synchronized (x.f5441a) {
+                this.e = true;
+                this.j = false;
+                x.f5441a.notifyAll();
+                while (this.g && !this.j && !this.b) {
+                    try {
+                        x.f5441a.wait();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+        }
+
+        public final void d() {
+            synchronized (x.f5441a) {
+                this.e = false;
+                x.f5441a.notifyAll();
+                while (!this.g && !this.b) {
+                    try {
+                        if (MapsInitializer.getTextureViewDestorySync()) {
+                            x.f5441a.wait();
+                        } else {
+                            x.f5441a.wait(2000L);
+                        }
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+        }
+
+        public final void e() {
+            synchronized (x.f5441a) {
+                this.f5449c = true;
+                x.f5441a.notifyAll();
+                while (!this.b && !this.d) {
+                    try {
+                        if (MapsInitializer.getTextureViewDestorySync()) {
+                            x.f5441a.wait();
+                        } else {
+                            x.f5441a.wait(2000L);
+                        }
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+        }
+
+        public final void f() {
+            synchronized (x.f5441a) {
+                this.f5449c = false;
+                this.o = true;
+                this.p = false;
+                x.f5441a.notifyAll();
+                while (!this.b && this.d && !this.p) {
+                    try {
+                        x.f5441a.wait();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+        }
+
+        public final void g() {
+            synchronized (x.f5441a) {
+                this.f5448a = true;
+                x.f5441a.notifyAll();
+                while (!this.b) {
+                    try {
+                        x.f5441a.wait();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+            }
+        }
+
+        public final void h() {
+            this.k = true;
+            x.f5441a.notifyAll();
+        }
+
+        public final int i() {
+            int i;
+            synchronized (x.f5441a) {
+                i = this.l;
+            }
+            return i;
+        }
+
+        public final int j() {
+            int i;
+            synchronized (x.f5441a) {
+                i = this.m;
+            }
+            return i;
+        }
+
+        @Override // java.lang.Thread, java.lang.Runnable
+        public final void run() {
+            setName("GLThread " + getId());
+            try {
+                m();
+                x.f5441a.a(this);
+            } catch (InterruptedException e) {
+                x.f5441a.a(this);
+            } catch (Throwable th) {
+                x.f5441a.a(this);
+                throw th;
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: com.amap.api.col.3sl.x$j */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$j.class */
+    public static final class j {
+
+        /* renamed from: a  reason: collision with root package name */
+        private static String f5450a = "GLThreadManager";
+        private boolean b;
+
+        /* renamed from: c  reason: collision with root package name */
+        private int f5451c;
+        private boolean d;
+        private boolean e;
+        private boolean f;
+        private i g;
+
+        private j() {
+        }
+
+        /* synthetic */ j(byte b) {
+            this();
+        }
+
+        private void c() {
+            if (this.b) {
+                return;
+            }
+            this.f5451c = 131072;
+            this.e = true;
+            this.b = true;
+        }
+
+        public final void a(i iVar) {
+            synchronized (this) {
+                i.a(iVar);
+                if (this.g == iVar) {
+                    this.g = null;
+                }
+                notifyAll();
+            }
+        }
+
+        public final void a(GL10 gl10) {
+            synchronized (this) {
+                if (!this.d && gl10 != null) {
+                    c();
+                    String glGetString = gl10.glGetString(7937);
+                    if (this.f5451c < 131072) {
+                        this.e = !glGetString.startsWith("Q3Dimension MSM7500 ");
+                        notifyAll();
+                    }
+                    boolean z = false;
+                    if (!this.e) {
+                        z = true;
+                    }
+                    this.f = z;
+                    this.d = true;
+                }
+            }
+        }
+
+        public final boolean a() {
+            boolean z;
+            synchronized (this) {
+                z = this.f;
+            }
+            return z;
+        }
+
+        public final boolean b() {
+            boolean z;
+            synchronized (this) {
+                c();
+                z = !this.e;
+            }
+            return z;
+        }
+
+        public final boolean b(i iVar) {
+            i iVar2 = this.g;
+            if (iVar2 == iVar || iVar2 == null) {
+                this.g = iVar;
+                notifyAll();
+                return true;
+            }
+            c();
+            if (this.e) {
+                return true;
+            }
+            i iVar3 = this.g;
+            if (iVar3 != null) {
+                iVar3.h();
+                return false;
+            }
+            return false;
+        }
+
+        public final void c(i iVar) {
+            if (this.g == iVar) {
+                this.g = null;
+            }
+            notifyAll();
+        }
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$k */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$k.class */
+    public interface k {
+        GL a();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: com.amap.api.col.3sl.x$l */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$l.class */
+    public static final class l extends Writer {
+
+        /* renamed from: a  reason: collision with root package name */
+        private StringBuilder f5452a = new StringBuilder();
+
+        l() {
+        }
+
+        private void a() {
+            if (this.f5452a.length() > 0) {
+                Log.v("GLSurfaceView", this.f5452a.toString());
+                StringBuilder sb = this.f5452a;
+                sb.delete(0, sb.length());
+            }
+        }
+
+        @Override // java.io.Writer, java.io.Closeable, java.lang.AutoCloseable
+        public final void close() {
+            a();
+        }
+
+        @Override // java.io.Writer, java.io.Flushable
+        public final void flush() {
+            a();
+        }
+
+        @Override // java.io.Writer
+        public final void write(char[] cArr, int i, int i2) {
+            int i3 = 0;
+            while (true) {
+                int i4 = i3;
+                if (i4 >= i2) {
+                    return;
+                }
+                char c2 = cArr[i + i4];
+                if (c2 == '\n') {
+                    a();
+                } else {
+                    this.f5452a.append(c2);
+                }
+                i3 = i4 + 1;
+            }
+        }
+    }
+
+    /* renamed from: com.amap.api.col.3sl.x$m */
+    /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/x$m.class */
+    final class m extends b {
+        public m() {
+            super();
+        }
+    }
+
+    public x(Context context) {
+        super(context, null);
+        this.b = new WeakReference<>(this);
+        a();
+    }
+
+    private void a() {
+        setSurfaceTextureListener(this);
+    }
+
+    private void e() {
+        if (this.f5442c != null) {
+            throw new IllegalStateException("setRenderer has already been called for this instance.");
+        }
+    }
+
+    private static boolean f() {
+        return Build.VERSION.SDK_INT < 23;
+    }
+
+    public final void a(e eVar) {
+        e();
+        this.f = eVar;
+    }
+
+    public final void a(f fVar) {
+        e();
+        this.g = fVar;
+    }
+
+    public void b() {
+        this.f5442c.e();
+    }
+
+    public void c() {
+        this.f5442c.f();
+    }
+
+    protected void finalize() throws Throwable {
+        try {
+            if (this.f5442c != null) {
+                this.f5442c.g();
+            }
+        } finally {
+            super.finalize();
+        }
+    }
+
+    public int getRenderMode() {
+        return this.f5442c.a();
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.e && this.d != null) {
+            i iVar = this.f5442c;
+            int a2 = iVar != null ? iVar.a() : 1;
+            i iVar2 = new i(this.b);
+            this.f5442c = iVar2;
+            if (a2 != 1) {
+                iVar2.a(a2);
+            }
+            this.f5442c.start();
+        }
+        this.e = false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        i iVar = this.f5442c;
+        if (iVar != null) {
+            iVar.g();
+        }
+        this.e = true;
+        super.onDetachedFromWindow();
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.view.View
+    public void onLayout(boolean z, int i2, int i3, int i4, int i5) {
+        onSurfaceTextureSizeChanged(getSurfaceTexture(), i4 - i2, i5 - i3);
+        super.onLayout(z, i2, i3, i4, i5);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i2, int i3) {
+        this.f5442c.c();
+        if (f() || MapsInitializer.getTextureSizeChangedInvoked()) {
+            onSurfaceTextureSizeChanged(surfaceTexture, i2, i3);
+        } else if (this.f5442c.i() == i2 && this.f5442c.j() == i3) {
+        } else {
+            onSurfaceTextureSizeChanged(surfaceTexture, i2, i3);
+        }
+    }
+
+    public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        this.f5442c.d();
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i2, int i3) {
+        this.f5442c.a(i2, i3);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    public void queueEvent(Runnable runnable) {
+        this.f5442c.a(runnable);
+    }
+
+    public void requestRender() {
+        this.f5442c.b();
+    }
+
+    public void setRenderMode(int i2) {
+        this.f5442c.a(i2);
+    }
+
+    public void setRenderer(GLSurfaceView.Renderer renderer) {
+        e();
+        if (this.f == null) {
+            this.f = new m();
+        }
+        if (this.g == null) {
+            this.g = new c(this, (byte) 0);
+        }
+        if (this.h == null) {
+            this.h = new d((byte) 0);
+        }
+        this.d = renderer;
+        i iVar = new i(this.b);
+        this.f5442c = iVar;
+        iVar.start();
+    }
+}
